@@ -1,0 +1,302 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #000;
+    --text-color: #FFF;
+    --button: #8257E5;
+    --border: #29292E;
+    --border-menu-mobile: #A8A8B3;
+    --text-color-menu-mobile: #E1E1E6;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background: url(./assets/blur-mobile.png) no-repeat bottom;
+    background-size:100%;
+    background-color:var(--background);
+    font-family: 'Manrope', sans-serif;
+}
+
+
+button.btnGetMyCoffe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 3rem;
+
+    width: 17.412rem;
+    height: 3.5rem;
+
+    border: 0.1rem solid var(--button);
+    border-radius: .6rem;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    background: none;
+    cursor: pointer;
+}
+
+button.btnGetMyCoffe:hover{
+    background-color: var(--button);
+    transition: background-color 500ms;
+}
+
+/*========== HEADER ==========*/
+
+header{
+    position: relative;
+    width: 43.3rem;
+    height: 5.85rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-inline: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+}
+
+header #logos svg:nth-child(1){
+    display: flex;
+}
+
+header #logos svg:nth-child(2){
+    display: none;
+}
+
+header .btnGetMyCoffe{
+    display: none;
+}
+
+header #menuNavigation{
+    visibility: hidden;
+    height: calc(5.86rem * 5);/*Altura de cada item do Menu * Número de itens do Menu*/
+    transition: height ease-in 150ms;
+}
+
+header #menuNavigation.menuOpen{
+    visibility: visible;
+    position: absolute;
+    top: 8.85rem;
+    left: 0;
+    background-color: var(--background);
+    width:100%;
+    height: calc(100vh - 8.85rem);
+}
+
+header #menuNavigation.menuOpen a{
+    display: block;
+    position: relative;
+    padding-top: 1.8rem;
+    padding-bottom: 1.4rem;
+
+    border-top: 1px solid var(--border);
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.56rem;
+    text-indent: 3.082rem;
+    text-decoration: none;
+    color: var(--border-menu-mobile);
+}
+
+header #menuNavigation.menuOpen a:last-child{
+    border-bottom: 1px solid var(--border);
+}
+
+header #menuNavigation.menuOpen a:hover::before{
+    content: ' ';
+    top: 0;
+    left: 0;
+    width: 0.5rem;
+    height: 100%;
+    background-color: var(--button);
+    position: absolute;
+}
+
+header #menuNavigation.menuOpen a:hover{
+    font-weight: 700;
+    color: var(--text-color-menu-mobile);
+}
+
+header #mobileMenuIcons{
+    display: flex;
+    align-items: center;
+}
+
+header #mobileMenuIcons svg{
+    cursor: pointer;
+}
+
+header #mobileMenuIcons #openButton{
+    display: block;
+}
+
+header #mobileMenuIcons #closeButton{
+    display: none;
+}
+
+header #mobileMenuIcons.iconMenuOpen{
+    flex-direction: row-reverse;
+}
+header #mobileMenuIcons.iconMenuOpen #openButton{
+    display: none;
+}
+
+header #mobileMenuIcons.iconMenuOpen #closeButton{
+    display: block;
+}
+
+/*========== MAIN ==========*/
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main h2{
+    margin-top: 8.85rem;
+    margin-bottom: 8.8rem;
+    width: 37.3rem;
+
+    color: var(--text-color);
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 4.1rem;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+main h1{
+    margin-top: 9.8rem;
+    margin-bottom: 2.5rem;
+
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 6.8rem;
+    text-align: center;
+    letter-spacing: -0.03em;
+    color: var(--text-color);
+}
+
+main h1 span{
+    color: var(--background);
+    text-shadow: -1px -1px 0 var(--button),
+                1px -1px 0 var(--button),
+                -1px 1px 0 var(--button),
+                1px 1px 0 var(--button);
+}
+
+main h1 .arrowsTitle{
+    font-size: 4rem;
+}
+
+main img{
+    width: 42.8rem;
+    height: 33.3rem;
+}
+
+/*========== Responsividade==========*/
+
+@media (min-width:1024px){
+    body{
+        background-color: var(--background);
+        background-image: url(./assets/blur-1.png), url(./assets/blur-2.png);
+        background-position: left bottom, top right;
+        background-size: initial;
+    }
+
+
+    header{
+        margin-top: 5rem;
+
+        width: 91.8rem;
+        height: 5rem;
+    }
+
+    header #logos svg:nth-child(1){
+        display: none;
+    }
+
+    header #logos svg:nth-child(2){
+        display: flex;
+    }
+
+    header #mobileMenuIcons{
+        display: none;
+    }
+
+    header button.btnGetMyCoffe{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.1rem 3.8rem;
+
+        width: 17.2rem;
+        height: 3.7rem;
+    }
+
+    header #menuNavigation{
+        visibility: initial;
+        height: initial;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3.243rem;
+    }
+
+    header #menuNavigation a{
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.912rem;
+        color: var(--text-color);
+        text-decoration: none;
+    }
+
+    header #menuNavigation a:hover{
+        color: var(--button);
+    }
+
+    main{
+        padding-right: 10rem;
+    }
+    main h2{
+        display:none;
+    }
+
+    main button.btnGetMyCoffe{
+        display: none;
+    }
+
+    main h1{
+        display: block;
+        font-size: 8rem;
+        line-height: 10.9rem;
+
+        margin-top: 4rem;
+    }
+
+    main h1 .arrowsTitle{
+        font-size: 6rem;
+    }
+
+    main img{
+        display: block;
+        margin: 0;
+        
+        width: 79.878rem;
+        height: 50.647rem;
+    }
+}
